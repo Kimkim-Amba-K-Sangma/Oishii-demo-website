@@ -31,7 +31,10 @@ export default function MenuPreview() {
   ]
 
   return (
-    <section id="menu" className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden">
+    <section
+      id="menu"
+      className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
 
         {/* Heading */}
@@ -66,35 +69,37 @@ export default function MenuPreview() {
         </motion.p>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {dishes.map((dish, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: i * 0.15, duration: 0.9 }}
+              transition={{ delay: i * 0.12, duration: 0.8 }}
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition flex flex-col"
             >
-              <div className="overflow-hidden">
+              {/* Image */}
+              <div className="relative aspect-square w-full overflow-hidden">
                 <img
                   src={dish.image}
                   alt={dish.name}
-                  className="w-full h-48 sm:h-56 md:h-64 object-cover hover:scale-105 transition duration-700"
+                  className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition duration-700"
                 />
               </div>
 
-              <div className="p-5 sm:p-6 flex flex-col flex-1">
-                <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#1F1F1F]">
+              {/* Content */}
+              <div className="p-3 sm:p-5 flex flex-col flex-1">
+                <h3 className="font-serif text-sm sm:text-lg mb-1 sm:mb-2 text-[#1F1F1F] truncate">
                   {dish.name}
                 </h3>
 
-                <p className="text-xs sm:text-sm text-[#6A6A6A] mb-4">
+                <p className="text-xs sm:text-sm text-[#6A6A6A] mb-3 line-clamp-2">
                   {dish.desc}
                 </p>
 
                 <div className="mt-auto">
-                  <p className="text-[#B89B6A] font-semibold text-base sm:text-lg">
+                  <p className="text-[#B89B6A] font-semibold text-sm sm:text-lg">
                     {dish.price}
                   </p>
                 </div>

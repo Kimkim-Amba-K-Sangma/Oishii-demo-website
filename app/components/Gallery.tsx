@@ -13,7 +13,10 @@ export default function Gallery() {
   ]
 
   return (
-    <section id="gallery" className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden">
+    <section
+      id="gallery"
+      className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
 
         {/* Heading */}
@@ -38,21 +41,24 @@ export default function Gallery() {
         </motion.h2>
 
         {/* Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {images.map((src, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ delay: i * 0.15, duration: 0.9 }}
+              transition={{ delay: i * 0.12, duration: 0.8 }}
               className="rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition"
             >
-              <img
-                src={src}
-                alt="Gallery"
-                className="w-full h-[260px] sm:h-[240px] md:h-[260px] object-cover"
-              />
+              {/* Image */}
+              <div className="relative aspect-square w-full">
+                <img
+                  src={src}
+                  alt="Gallery"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
             </motion.div>
           ))}
         </div>
