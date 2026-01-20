@@ -4,7 +4,8 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 
 export default function Reservation() {
-  const RESTAURANT_NUMBER = "916000186482"
+  // ✅ CORRECT WHATSAPP NUMBER (India +91, no spaces)
+  const RESTAURANT_NUMBER = "919101547611"
 
   const [form, setForm] = useState({
     name: "",
@@ -27,7 +28,8 @@ export default function Reservation() {
       return
     }
 
-    const message = `Hello Oishii,
+    // ✅ WhatsApp message
+    const message = `Hello Oishii 👋,
 
 I would like to reserve a table.
 
@@ -40,6 +42,7 @@ Special Requests: ${form.notes || "None"}
 
 Thank you.`
 
+    // ✅ WhatsApp redirect
     const url = `https://wa.me/${RESTAURANT_NUMBER}?text=${encodeURIComponent(message)}`
     window.open(url, "_blank")
   }
@@ -48,7 +51,10 @@ Thank you.`
     "w-full p-3 sm:p-4 rounded-lg border border-[#E5DCCB] bg-white text-sm sm:text-base text-[#1F1F1F] placeholder:text-[#7A6F63] focus:ring-2 focus:ring-[#C9B28B] outline-none"
 
   return (
-    <section id="reservation" className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden">
+    <section
+      id="reservation"
+      className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
 
         {/* IMAGE */}
@@ -59,7 +65,10 @@ Thank you.`
           transition={{ duration: 1.2 }}
           className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px] sm:h-[520px] md:h-[700px]"
         >
-          <img src="/Reservation.jpeg" className="absolute inset-0 w-full h-full object-cover" />
+          <img
+            src="/Reservation.jpeg"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
           <div className="absolute inset-0 bg-black/40 p-6 sm:p-10 md:p-12 flex flex-col justify-end text-white">
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-4 sm:mb-6">
@@ -79,7 +88,7 @@ Thank you.`
 
             <div className="mt-4 sm:mt-8 text-xs sm:text-sm space-y-1">
               <p>🕒 12:00 PM – 11:00 PM</p>
-              <p>📞 +91 60001 86482</p>
+              <p>📞 +91 9101547611</p>
             </div>
           </div>
         </motion.div>
@@ -98,17 +107,41 @@ Thank you.`
               Book Your Experience
             </h3>
 
-            <input name="name" placeholder="Full Name" onChange={handleChange} required className={inputStyle} />
-            <input name="phone" placeholder="Phone" onChange={handleChange} required className={inputStyle} />
+            <input
+              name="name"
+              placeholder="Full Name"
+              onChange={handleChange}
+              required
+              className={inputStyle}
+            />
+
+            <input
+              name="phone"
+              placeholder="Phone"
+              onChange={handleChange}
+              required
+              className={inputStyle}
+            />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <input type="date" name="date" onChange={handleChange} required className={inputStyle} />
               <input type="time" name="time" onChange={handleChange} required className={inputStyle} />
             </div>
 
-            <input name="guests" placeholder="Number of Guests" onChange={handleChange} required className={inputStyle} />
+            <input
+              name="guests"
+              placeholder="Number of Guests"
+              onChange={handleChange}
+              required
+              className={inputStyle}
+            />
 
-            <textarea name="notes" placeholder="Special requests" onChange={handleChange} className={`${inputStyle} h-24 sm:h-28`} />
+            <textarea
+              name="notes"
+              placeholder="Special requests"
+              onChange={handleChange}
+              className={`${inputStyle} h-24 sm:h-28`}
+            />
           </div>
 
           <div className="mt-6 sm:mt-10">

@@ -1,10 +1,14 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { MapPin, Phone, Clock } from "lucide-react"
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden">
+    <section
+      id="contact"
+      className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
 
         {/* Header */}
@@ -35,42 +39,48 @@ export default function Contact() {
           >
             {[
               {
-                icon: "📍",
+                icon: MapPin,
                 title: "Address",
                 content: "OISHII Restaurant\nTura, Meghalaya\nIndia",
               },
               {
-                icon: "📞",
+                icon: Phone,
                 title: "Phone",
-                content: "+91 98765 43210",
+                content: "+91 9101547611",
               },
               {
-                icon: "⏰",
+                icon: Clock,
                 title: "Opening Hours",
                 content: "Monday – Sunday\n12:00 PM – 11:00 PM",
               },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="flex gap-4 sm:gap-6 md:gap-8"
-              >
-                <div className="w-6 flex justify-center text-[#B89B6A] text-lg sm:text-xl">
-                  {item.icon}
-                </div>
-                <div>
-                  <p className="font-serif text-lg sm:text-xl mb-1 sm:mb-2">
-                    {item.title}
-                  </p>
-                  <p className="leading-relaxed whitespace-pre-line text-sm sm:text-base">
-                    {item.content}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+            ].map((item, i) => {
+              const Icon = item.icon
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.2 }}
+                  className="flex gap-4 sm:gap-6 md:gap-8"
+                >
+                  {/* Icon */}
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow flex items-center justify-center">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#B89B6A]" />
+                  </div>
+
+                  {/* Text */}
+                  <div>
+                    <p className="font-serif text-lg sm:text-xl mb-1 sm:mb-2">
+                      {item.title}
+                    </p>
+                    <p className="leading-relaxed whitespace-pre-line text-sm sm:text-base">
+                      {item.content}
+                    </p>
+                  </div>
+                </motion.div>
+              )
+            })}
           </motion.div>
 
           {/* MAP */}

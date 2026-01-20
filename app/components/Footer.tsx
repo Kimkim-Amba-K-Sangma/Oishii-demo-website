@@ -18,8 +18,14 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-              <img src="/logo.png" className="w-10 h-10 sm:w-12 sm:h-12" />
-              <span className="font-serif text-xl sm:text-2xl">Oishii</span>
+              <img
+                src="/logo.png"
+                alt="Oishii Logo"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+              />
+              <span className="font-serif text-xl sm:text-2xl">
+                Oishii
+              </span>
             </div>
 
             <p className="text-sm sm:text-base text-[#BFB8AC] leading-relaxed max-w-sm">
@@ -31,10 +37,26 @@ export default function Footer() {
           <div>
             <p className="font-serif text-lg sm:text-xl mb-4 sm:mb-6">Quick Links</p>
             <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-[#BFB8AC]">
-              <li><a href="#home" className="hover:text-[#D8C2A1] transition">Home</a></li>
-              <li><a href="#menu" className="hover:text-[#D8C2A1] transition">Menu</a></li>
-              <li><a href="#about" className="hover:text-[#D8C2A1] transition">About</a></li>
-              <li><a href="#reservation" className="hover:text-[#D8C2A1] transition">Reservations</a></li>
+              <li>
+                <a href="#hero" className="hover:text-[#D8C2A1] transition">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#menu" className="hover:text-[#D8C2A1] transition">
+                  Menu
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-[#D8C2A1] transition">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#reservation" className="hover:text-[#D8C2A1] transition">
+                  Reservations
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -43,25 +65,39 @@ export default function Footer() {
             <p className="font-serif text-lg sm:text-xl mb-4 sm:mb-6">Connect With Us</p>
 
             <div className="flex gap-4 sm:gap-6 mb-4 sm:mb-6">
+              {/* Instagram */}
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="https://www.instagram.com/the_oishii_tura?igsh=MTJ6N2F6OGhnMzlkZQ=="
+                href="https://www.instagram.com/the_oishii_tura"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#3A3733] flex items-center justify-center hover:bg-[#D8C2A1] transition"
               >
-                <img src="/instagram.svg" className="w-4 sm:w-5" />
+                <img
+                  src="/instagram.svg"
+                  alt="Instagram"
+                  className="w-4 sm:w-5"
+                />
               </motion.a>
 
+              {/* WhatsApp */}
               <motion.a
                 whileHover={{ scale: 1.1 }}
-                href="#"
+                href="https://wa.me/919101547611"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#3A3733] flex items-center justify-center hover:bg-[#D8C2A1] transition"
               >
-                <img src="/whatsapp.svg" className="w-4 sm:w-5" />
+                <img
+                  src="/whatsapp.svg"
+                  alt="WhatsApp"
+                  className="w-4 sm:w-5"
+                />
               </motion.a>
             </div>
 
             <p className="text-sm sm:text-base text-[#BFB8AC] max-w-xs">
-              Follow us for daily specials and culinary inspiration.
+              Chat with us on WhatsApp for reservations and inquiries.
             </p>
           </div>
 

@@ -9,7 +9,10 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative h-screen bg-[url('/Hero.jpeg')] bg-cover bg-center">
+    <section
+      id="hero"   // 👈 THIS LINE FIXES HOME BUTTON
+      className="relative h-screen bg-[url('/Hero.jpeg')] bg-cover bg-center"
+    >
       <div className="absolute inset-0 bg-black/50"></div>
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6">
