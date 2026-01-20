@@ -4,7 +4,10 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <section id="about" className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden">
+    <section
+      id="about"
+      className="scroll-mt-24 sm:scroll-mt-28 md:scroll-mt-32 bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 md:gap-20 items-center">
 
         {/* Image */}

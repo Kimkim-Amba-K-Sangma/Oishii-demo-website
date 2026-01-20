@@ -10,8 +10,8 @@ export default function Hero() {
 
   return (
     <section
-      id="hero"   // 👈 THIS LINE FIXES HOME BUTTON
-      className="relative h-screen bg-[url('/Hero.jpeg')] bg-cover bg-center"
+      id="hero"
+      className="scroll-mt-24 sm:scroll-mt-28 md:scroll-mt-32 relative h-screen bg-[url('/Hero.jpeg')] bg-cover bg-center"
     >
       <div className="absolute inset-0 bg-black/50"></div>
 

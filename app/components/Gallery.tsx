@@ -15,7 +15,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
+      className="scroll-mt-24 sm:scroll-mt-28 md:scroll-mt-32 bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
 
@@ -51,7 +51,6 @@ export default function Gallery() {
               transition={{ delay: i * 0.12, duration: 0.8 }}
               className="rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition"
             >
-              {/* Image */}
               <div className="relative aspect-square w-full">
                 <img
                   src={src}

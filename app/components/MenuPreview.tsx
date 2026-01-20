@@ -33,7 +33,7 @@ export default function MenuPreview() {
   return (
     <section
       id="menu"
-      className="bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
+      className="scroll-mt-24 sm:scroll-mt-28 md:scroll-mt-32 bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10">
 
@@ -79,7 +79,6 @@ export default function MenuPreview() {
               transition={{ delay: i * 0.12, duration: 0.8 }}
               className="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition flex flex-col"
             >
-              {/* Image */}
               <div className="relative aspect-square w-full overflow-hidden">
                 <img
                   src={dish.image}
@@ -88,7 +87,6 @@ export default function MenuPreview() {
                 />
               </div>
 
-              {/* Content */}
               <div className="p-3 sm:p-5 flex flex-col flex-1">
                 <h3 className="font-serif text-sm sm:text-lg mb-1 sm:mb-2 text-[#1F1F1F] truncate">
                   {dish.name}
