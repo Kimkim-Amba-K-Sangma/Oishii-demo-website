@@ -50,85 +50,72 @@ Thank you.`
   return (
     <section
       id="reservation"
-      className="scroll-mt-24 bg-[#F6F2EC] py-20 sm:py-24 md:py-32 overflow-hidden"
+      className="scroll-mt-24 bg-[#F6F2EC] py-12 sm:py-24 md:py-32"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 items-center">
 
         {/* IMAGE */}
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
-          className="relative rounded-2xl overflow-hidden shadow-2xl h-[420px] sm:h-[520px] md:h-[700px]"
+          transition={{ duration: 1 }}
+          className="relative rounded-2xl overflow-hidden shadow-2xl h-[320px] sm:h-[420px] md:h-[700px]"
         >
           <img
             src="/Reservation.jpeg"
             className="absolute inset-0 w-full h-full object-cover"
+            alt="Reservation"
           />
+
+          <div className="absolute inset-0 bg-black/40 p-6 sm:p-10 md:p-12 flex flex-col justify-end text-white">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl mb-4">
+              Reserve Your Table
+            </h2>
+
+            <p className="mb-6 text-sm sm:text-base max-w-md">
+              Experience authentic Japanese and Chinese hospitality — one
+              reservation away from happiness.
+            </p>
+
+            <ul className="space-y-1 text-xs sm:text-sm">
+              <li>• Guaranteed table availability</li>
+              <li>• Priority seating</li>
+              <li>• Personalized service</li>
+            </ul>
+
+            <div className="mt-4 text-xs sm:text-sm space-y-1">
+              <p>🕒 12:00 PM – 11:00 PM</p>
+              <p>📞 +91 9101547611</p>
+            </div>
+          </div>
         </motion.div>
 
         {/* FORM */}
         <motion.form
-          initial={{ opacity: 0, x: 60 }}
+          initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 1 }}
           onSubmit={handleSubmit}
-          className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] p-6 sm:p-10 md:p-12 border border-[#E6D9C3]"
+          className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] p-6 sm:p-10 md:p-12 border border-[#E6D9C3]"
         >
           <div className="space-y-4 sm:space-y-6">
             <h3 className="font-serif text-2xl sm:text-3xl text-[#1F1F1F]">
               Book Your Experience
             </h3>
 
-            <input
-              name="name"
-              placeholder="Full Name"
-              onChange={handleChange}
-              required
-              className={inputStyle}
-            />
-
-            <input
-              name="phone"
-              placeholder="Phone"
-              onChange={handleChange}
-              required
-              className={inputStyle}
-            />
+            <input name="name" placeholder="Full Name" onChange={handleChange} required className={inputStyle} />
+            <input name="phone" placeholder="Phone" onChange={handleChange} required className={inputStyle} />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input
-                type="date"
-                name="date"
-                onChange={handleChange}
-                required
-                className={inputStyle}
-              />
-              <input
-                type="time"
-                name="time"
-                onChange={handleChange}
-                required
-                className={inputStyle}
-              />
+              <input type="date" name="date" onChange={handleChange} required className={inputStyle} />
+              <input type="time" name="time" onChange={handleChange} required className={inputStyle} />
             </div>
 
-            <input
-              name="guests"
-              placeholder="Number of Guests"
-              onChange={handleChange}
-              required
-              className={inputStyle}
-            />
+            <input name="guests" placeholder="Number of Guests" onChange={handleChange} required className={inputStyle} />
 
-            <textarea
-              name="notes"
-              placeholder="Special requests"
-              onChange={handleChange}
-              className={`${inputStyle} h-24`}
-            />
+            <textarea name="notes" placeholder="Special requests" onChange={handleChange} className={`${inputStyle} h-24`} />
           </div>
 
           <button
@@ -137,6 +124,10 @@ Thank you.`
           >
             Confirm Reservation
           </button>
+
+          <p className="text-center text-xs sm:text-sm text-gray-500 mt-3">
+            You’ll receive a confirmation on WhatsApp
+          </p>
         </motion.form>
 
       </div>
